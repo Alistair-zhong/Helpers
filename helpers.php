@@ -57,3 +57,43 @@ if (!function_exists('is_diff')) {
         return empty($fields) ? false : $fields;
     }
 }
+
+if(! function_exists('microtime_float')){
+    
+   /**
+    * 获取微秒数
+    * get microtime
+    * 
+    */
+    function microtime_float(){
+        list($usec,$sec) = explode(" ",microtime());
+
+        return ((float)$usec + (float)$sec);
+    }
+}
+
+if (!function_exists('array_remove')) {
+    /**
+     * 从数组中移除一个元素
+     * remove en element by value
+     *
+     * @param array $arr
+     * @param mixied $value
+     */
+    function array_remove(array &$arr, $value)
+    {
+        $key = array_search($value, $arr);
+        if (false !== $key) {
+            if (is_numeric($key)) {
+                array_splice($arr, $key, 1);
+            } else {
+                unset($arr[$key]);
+            }
+        }
+        
+        return $arr;
+    }
+}
+
+
+

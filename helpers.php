@@ -42,9 +42,9 @@ if (!function_exists('is_diff')) {
      * 判断两个对象的指定字段是否相同 
      * is two objects's specific fields same
      * 
-     * @param  object before
-     * @param  object after
-     * @param array fields
+     * @param  object $before
+     * @param  object $after
+     * @param array $fields
      */
     function is_diff($before, $after, array $fields)
     {
